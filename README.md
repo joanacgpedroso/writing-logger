@@ -2,8 +2,20 @@
 
 ## Setup
 
-- Install `nvm`
-- Run `nvm use`
+- Install [nvm](https://github.com/nvm-sh/nvm)
+
+```
+// set Node version to be used
+nvm use
+
+// install all depedencies
+npm ci
+
+// run in watch mode
+npm run serve:ssr
+
+```
+
 
 ## Contribute
 
