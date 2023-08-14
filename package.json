@@ -6,15 +6,15 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
-    "test": "ng test --watch=false",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
     "lint": "ng lint",
-    "dev:ssr": "ng run writing-logger:serve-ssr",
-    "serve:ssr": "node dist/writing-logger/server/main.js",
+    "test": "ng test --code-coverage",
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
+    "start": "ng serve",
+    "start:ssr": "ng run writing-logger:serve-ssr",
+    "build": "ng build",
     "build:ssr": "ng build && ng run writing-logger:server",
-    "prerender": "ng run writing-logger:prerender"
+    "prerender": "ng run writing-logger:prerender",
+    "serve:ssr": "node dist/writing-logger/server/main.js"
   },
   "keywords": [],
   "author": "",
