@@ -38,7 +38,12 @@
             "styles": [
               "src/styles.sass"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "ngneat-transloc",
+              "ngneat-transloco-locale",
+              "flat"
+            ]
           },
           "configurations": {
             "production": {
@@ -112,61 +117,6 @@
               "src/**/*.html"
             ]
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/writing-logger/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "sass"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false,
-              "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "configurations": {
-            "development": {
-              "browserTarget": "writing-logger:build:development",
-              "serverTarget": "writing-logger:server:development"
-            },
-            "production": {
-              "browserTarget": "writing-logger:build:production",
-              "serverTarget": "writing-logger:server:production"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "routes": [
-              "/"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "writing-logger:build:production",
-              "serverTarget": "writing-logger:server:production"
-            },
-            "development": {
-              "browserTarget": "writing-logger:build:development",
-              "serverTarget": "writing-logger:server:development"
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
