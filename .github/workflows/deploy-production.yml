@@ -3,8 +3,10 @@ run-name: Lint and Test
 on:
   workflow_run:
     worflows: [Lint and Test]
-    types: [completed]
-    branches: [production]
+    types:
+      - completed
+    branches:
+      - production
 
 jobs:
   on-success:
