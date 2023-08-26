@@ -1,0 +1,20 @@
+name: Deployment to Production
+run-name: Lint and Test
+on:
+  workflow_run:
+    worflows: [Lint and Test]
+    types: [completed]
+    branches: [production]
+
+jobs:
+  on-success:
+    runs-on: ubuntu-20.04
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Install Dependecies and Run Tests
+        uses: ./.github/actions/setup
+
+      # TODO: add tags and all that spark
+
+      - name: Deploy
+        run: npm run deploy:production
